@@ -1,0 +1,49 @@
+# Python -------------------------------------------------
+__pycache__/
+*.py[codz]
+*$py.class
+
+# Distribution / Packaging -------------------------------
+build/
+dist/
+wheels/
+*.egg-info/
+
+# Environments -------------------------------------------
+.venv
+.env
+
+# Jupyter / IPython --------------------------------------
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+.virtual_documents/
+profile_default/
+ipython_config.py
+
+# Ruff ---------------------------------------------------
+.ruff_cache/
+
+# OS -----------------------------------------------------
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+.localized
+__MACOSX/
+# 'Icon' below must end with a carriage return (custom-folder-icon file)
+Icon
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+# Linux
+*~
+.directory
+.Trash-*
+.nfs*
+.fuse_hidden*
+nohup.out
