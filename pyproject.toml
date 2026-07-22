@@ -17,7 +17,7 @@ dependencies = [
     "torch>=2.13.0",
     "transformers>=5.14.1",
 ]
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 authors = [
     { name = "LuoZihYuan", email = "zihyuan.luo@gmail.com" }
 ]
@@ -74,7 +74,7 @@ line-length = 128
 indent-width = 2
 
 # Assume Python 3.10
-target-version = "py310"
+target-version = "py313"
 
 [tool.ruff.lint]
 # Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`) codes by default.
