@@ -68,6 +68,15 @@ wheels = [
 ]
 
 [[package]]
+name = "bigtree"
+version = "1.5.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/0c/ff/7a79d3090a1f6d52bbe12da86e07d71dba56a6e2e34a3f70421d8593f571/bigtree-1.5.3.tar.gz", hash = "sha256:81169329ec92dfab7d8df9d61d85d8dea8b8512fbf073fbc95badc21eadcd14f", size = 1648987, upload-time = "2026-07-16T17:19:47.399Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/70/d9/eb513c2ab577bc8400f75bb5c6a08ed24f3ab92b6a4164c98ba5c85b7646/bigtree-1.5.3-py3-none-any.whl", hash = "sha256:47879c5d80f4e0d50f2c8818d3b80fc58af24b5372608223aac25e5580ac0ed8", size = 137211, upload-time = "2026-07-16T17:19:46.044Z" },
+]
+
+[[package]]
 name = "certifi"
 version = "2026.6.17"
 source = { registry = "https://pypi.org/simple" }
@@ -854,6 +863,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "accelerate" },
+    { name = "bigtree" },
     { name = "ipykernel" },
     { name = "matplotlib" },
     { name = "numpy" },
@@ -873,6 +883,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "accelerate", specifier = ">=1.14.0" },
+    { name = "bigtree", specifier = ">=1.5.3" },
     { name = "ipykernel", specifier = ">=7.3.0" },
     { name = "matplotlib", specifier = ">=3.11.1" },
     { name = "numpy", specifier = ">=2.5.1" },
