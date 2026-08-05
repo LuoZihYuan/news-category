@@ -26,6 +26,7 @@ def plot_per_class_f1(y_true, y_pred, labels: list, ax=None) -> None:
   scores = f1_score(y_true, y_pred, labels=labels, average=None, zero_division=0)
   sr_f1 = pd.Series(scores, index=labels).sort_values()
   sr_f1.plot.barh(ax=ax, title="Per-Class F1", xlabel="F1", xlim=(0, 1))
+  ax.bar_label(ax.containers[0], fmt="%.3f", padding=2, fontsize=7)
 
 
 def plot_learning_curve(estimator, X, y, ax=None) -> None:
@@ -35,6 +36,8 @@ def plot_learning_curve(estimator, X, y, ax=None) -> None:
     estimator, X, y, cv=make_folds(), scoring=SCORER, score_name="Macro F1", train_sizes=np.linspace(0.1, 1.0, 5), ax=ax
   )
   ax.set_title("Learning Curve")
+  ax.set_xlabel("Training Samples")
+  ax.set_ylim(0, 1)
 
 
 def plot_metric_comparison(results: dict, ax=None) -> None:
@@ -43,5 +46,5 @@ def plot_metric_comparison(results: dict, ax=None) -> None:
   df_results = pd.DataFrame(results)  # metrics as rows (x), configs as columns (grouped bars)
   df_results.plot.bar(ax=ax, title="Metric Comparison", xlabel="", ylim=(0, 1), rot=0)
   for container in ax.containers:
-    ax.bar_label(container, fmt="%.3f", rotation=90, padding=2, fontsize=7)
-  ax.legend(loc="lower right", ncol=2)
+    ax.bar_label(container, fmt="%.3f", padding=2, fontsize=7)
+  ax.legend(loc="upper right", ncol=2)
