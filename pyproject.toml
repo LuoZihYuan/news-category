@@ -8,6 +8,7 @@ version = "0.1.0"
 dependencies = [
     "accelerate>=1.14.0",
     "bigtree>=1.5.3",
+    "gensim>=4.4.0",
     "ipykernel>=7.3.0",
     "matplotlib>=3.11.1",
     "numpy>=2.5.1",
