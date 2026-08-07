@@ -25,7 +25,7 @@ authors = [
 maintainers = [
     { name = "LuoZihYuan", email = "zihyuan.luo@gmail.com" }
 ]
-description = "News headline categorization with fine-tuned DistilBERT, BiLSTM, logistic regression, and Naive Bayes."
+description = "News headline categorization with fine-tuned DistilBERT, BiLSTM, Logistic Regression, and Naive Bayes."
 readme = "README.md"
 license = "MIT"
 license-files = ["LICEN[CS]E*"]

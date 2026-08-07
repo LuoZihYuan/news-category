@@ -1,3 +1,3 @@
 # **news-category**
 
-News headline categorization with fine-tuned DistilBERT, BiLSTM, logistic regression, and Naive Bayes.
+News headline categorization with fine-tuned DistilBERT, BiLSTM, Logistic Regression, and Naive Bayes.
