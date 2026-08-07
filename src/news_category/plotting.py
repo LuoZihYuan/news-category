@@ -40,6 +40,18 @@ def plot_learning_curve(estimator, X, y, ax=None) -> None:
   ax.set_ylim(0, 1)
 
 
+def plot_training_history(history: dict, ax=None) -> None:
+  """Macro-F1 per epoch for train and validation, to reveal when a deep model starts overfitting."""
+  ax = ax or plt.gca()
+  for split in ["train", "validation"]:
+    ax.plot(range(1, len(history[split]) + 1), history[split], marker="o", label=split)
+  ax.set_title("Training History")
+  ax.set_xlabel("Epoch")
+  ax.set_ylabel("Macro F1")
+  ax.set_ylim(0, 1)
+  ax.legend()
+
+
 def plot_metric_comparison(results: dict, ax=None) -> None:
   """Grouped bars per metric, one bar per config, labeled with exact scores, for picking the winner."""
   ax = ax or plt.gca()
