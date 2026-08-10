@@ -6,6 +6,7 @@ data/**
 !data/**/.gitkeep
 results/*
 !results/.gitkeep
+checkpoints/
 
 # Python -------------------------------------------------
 __pycache__/
