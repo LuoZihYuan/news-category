@@ -34,6 +34,7 @@ license-files = ["LICEN[CS]E*"]
 
 [dependency-groups]
 dev = [
+    "ipywidgets>=8.1.8",
     "ruff>=0.15.22",
 ]
 
