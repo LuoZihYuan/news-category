@@ -79,7 +79,7 @@ The primary metric is **macro-averaged F1**, chosen because the categories are h
 - **Fields used:** `headline`, `short_description`, `authors`. The `link` field is deliberately excluded because its URL slug leaks the label.
 
 - **Split:** a single stratified 80/20 train/test split. Deep models further carve a stratified 10% validation slice from the training set for early stopping.
-Because the dataset ships as one flat collection, our test set is a random draw from the same distribution as training. This measures **in-distribution generalization** rather than robustness to distribution shift. See [Future Work](#future-work).
+Because the dataset ships as one flat collection, our test set is a random draw from the same distribution as training. This measures **in-distribution generalization** rather than robustness to distribution shift. See [Future Work](#-future-work).
 
   ![Class Distribution](./assets/images/class_distribution.png)
 
@@ -249,22 +249,23 @@ Several directions could raise performance or sharpen the analysis:
 
 ```
 news-category/
-├── 01_preprocessing.ipynb          # load raw data, clean, stratified train/test split
-├── 02_taxonomy.ipynb               # merge near-duplicate categories (versioned)
-├── 03_naive_bayes.ipynb            # Multinomial Naive Bayes over TF-IDF
-├── 04_logistic_regression.ipynb    # Logistic Regression over TF-IDF
-├── 05_bilstm.ipynb                 # BiLSTM over trainable GloVe embeddings
-├── 06_distilbert.ipynb             # fine-tuned DistilBERT
-├── 07_comparison.ipynb             # cross-model comparison
-├── src/news_category/              # shared library imported by every notebook
-│   ├── data.py                     # split loading, field assembly, config definitions
-│   ├── evaluate.py                 # macro-F1 scoring, cross-validation folds
-│   ├── plotting.py                 # confusion matrix, per-class F1, history/curve plots
-│   └── display.py                  # labeled console output helper
-├── data/                           # dataset and derived splits (gitignored)
-│   ├── raw/                        # original Kaggle download
-│   └── processed/<version>/        # per-taxonomy train/test splits and label maps
-├── results/<model>/                # scores & best params per model (gitignored)
-├── assets/images/                  # figures embedded in this README
+├── 01_preprocessing.ipynb           # load raw data, clean, stratified train/test split
+├── 02_taxonomy.ipynb                # merge near-duplicate categories (versioned)
+├── 03_naive_bayes.ipynb             # Multinomial Naive Bayes over TF-IDF
+├── 04_logistic_regression.ipynb     # Logistic Regression over TF-IDF
+├── 05_bilstm.ipynb                  # BiLSTM over trainable GloVe embeddings
+├── 06_distilbert.ipynb              # fine-tuned DistilBERT
+├── 07_comparison.ipynb              # cross-model comparison
+├── src/news_category/               # shared library imported by every notebook
+│   ├── data.py                      # split loading, field assembly, config definitions
+│   ├── evaluate.py                  # macro-F1 scoring, cross-validation folds
+│   ├── plotting.py                  # confusion matrix, per-class F1, history/curve plots
+│   └── display.py                   # labeled console output helper
+├── data/                            # dataset and derived splits (gitignored)
+│   ├── raw/                         # original Kaggle download
+│   └── processed/<version>/         # per-taxonomy train/test splits and label maps
+├── results/<model>/                 # scores & best params per model (gitignored)
+├── checkpoints/distilbert/<config>/ # DistilBERT training checkpoints (gitignored)
+├── assets/images/                   # figures embedded in this README
 └── README.md
 ```
